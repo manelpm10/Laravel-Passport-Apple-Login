@@ -1,0 +1,28 @@
+{
+    "name": "manelpm10/laravel-passport-apple-login",
+    "description": "Apple Token Request Grant for Laravel Passport",
+    "license": "MIT",
+    "keywords": ["laravel", "lumen", "passport", "oauth", "grant"],
+    "authors": [
+        {
+            "name": "Manel Pérez",
+            "email": "yo@manelperez.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "PassportAppleLogin\\": "src"
+        }
+    },
+    "require": {
+        "laravel/passport": "^6.0",
+        "griffinledingham/php-apple-signin": "^1.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PassportAppleLogin\\AppleLoginGrantProvider"
+            ]
+        }
+    }
+}
