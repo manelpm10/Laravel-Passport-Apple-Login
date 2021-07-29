@@ -3,6 +3,19 @@
 return [
     /*
     |--------------------------------------------------------------------------
+    | Application
+    |--------------------------------------------------------------------------
+    |
+    | The DateInterval format for expire token ttl.
+    | See https://www.php.net/manual/es/dateinterval.format.php for mor info about format
+    |
+    */
+    'app' => [
+        'token_expire_interval' => env('TOKEN_EXPIRE_INTERVAL', 'P1D'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Registration Fields
     |--------------------------------------------------------------------------
     |

@@ -2,6 +2,7 @@
 
 namespace PassportAppleLogin;
 
+use DateInterval;
 use Laravel\Passport\Bridge\RefreshTokenRepository;
 use Laravel\Passport\Bridge\UserRepository;
 use Laravel\Passport\Passport;
@@ -31,7 +32,10 @@ class AppleLoginGrantProvider extends PassportServiceProvider
         ]);
 
         if (file_exists(storage_path('oauth-private.key'))) {
-            app(AuthorizationServer::class)->enableGrantType($this->makeRequestGrant(), Passport::tokensExpireIn());
+            app(AuthorizationServer::class)->enableGrantType(
+                $this->makeRequestGrant(),
+                new \DateInterval(config('apple.app.token_expire_interval'))
+            );
         }
     }
 
