@@ -3,21 +3,22 @@
 namespace PassportAppleLogin;
 
 
-use App\User;
+use App\Models\User;
 use AppleSignIn\ASDecoder;
 use AppleSignIn\ASPayload;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use League\OAuth2\Server\Exception\OAuthServerException;
 
 trait AppleLoginTrait
 {
     /**
-     * Logs a App\User in using a Apple token via Passport
+     * Logs a App\Models\User in using a Apple token via Passport
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      *
-     * @return \Illuminate\Database\Eloquent\Model|null
-     * @throws \League\OAuth2\Server\Exception\OAuthServerException
+     * @return Model|null
+     * @throws OAuthServerException
      */
     public function loginApple(Request $request)
     {
